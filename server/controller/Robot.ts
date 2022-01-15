@@ -353,8 +353,7 @@ class Robot{
                 const configuration = await Setting.findOne()
 
                 if(configuration){
-                    await Helper.sendAction(configuration.webhook, {action: 'close_at_market_price', message_type: 
-                    payload.message_type, bot_id: configuration.bot_id, email_token: configuration.email_token})
+                    await Helper.sendAction(configuration.webhook, {action: 'close_at_market_price', message_type: 'bot', bot_id: configuration.bot_id, email_token: configuration.email_token})
                 }
 
                 
@@ -400,8 +399,7 @@ class Robot{
                 const configuration = await Setting.findOne()
 
                 if(configuration){
-                    await Helper.sendAction(configuration.webhook, {action: 'close_at_market_price', message_type: 
-                    payload.message_type, bot_id: configuration.bot_id, email_token: configuration.email_token})
+                    await Helper.sendAction(configuration.webhook, {action: 'close_at_market_price', message_type: 'bot', bot_id: configuration.bot_id, email_token: configuration.email_token})
                 }
             }
 
@@ -445,8 +443,7 @@ class Robot{
                 const configuration = await Setting.findOne()
 
                 if(configuration ){
-                    await Helper.sendAction(configuration.webhook, {action: 'close_at_market_price', message_type: 
-                    payload.message_type, bot_id: configuration.bot_id, email_token: configuration.email_token})
+                    await Helper.sendAction(configuration.webhook, {action: 'close_at_market_price', message_type: 'bot', bot_id: configuration.bot_id, email_token: configuration.email_token})
                 }
             }
 
@@ -490,8 +487,7 @@ class Robot{
                 const configuration = await Setting.findOne()
 
                 if(configuration){
-                    await Helper.sendAction(configuration.webhook, {action: 'close_at_market_price', message_type: 
-                    payload.message_type, bot_id: configuration.bot_id, email_token: configuration.email_token})
+                    await Helper.sendAction(configuration.webhook, {action: 'close_at_market_price', message_type: 'bot', bot_id: configuration.bot_id, email_token: configuration.email_token})
                 }
             }
 
@@ -509,8 +505,7 @@ class Robot{
             const configuration = await Setting.findOne()
 
                 if(configuration){
-                    await Helper.sendAction(configuration.webhook, {action: 'close_at_market_price', message_type: 
-                    payload.message_type, bot_id: configuration.bot_id, email_token: configuration.email_token})
+                    await Helper.sendAction(configuration.webhook, {action: 'close_at_market_price', message_type:'bot', bot_id: configuration.bot_id, email_token: configuration.email_token})
                 }
                 res.status(200).send({ success: true})
             
