@@ -52,6 +52,7 @@ class App {
     return new Promise(async(resolve, reject) => {
       try{
         console.log('webhook called ooo: ', url)
+        console.log('PAYLOAD: ', payload)
         const response = await Axios.post(url,payload)
         console.log('webhook called ooo')
         resolve(response.data)
