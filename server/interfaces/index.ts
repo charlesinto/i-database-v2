@@ -13,7 +13,9 @@ export interface IActionMessageS{
     action: string;
     message_type: string;
     bot_id: number;
-    email_token: string
+    email_token: string;
+    delay_seconds: number;
+    pair: string;
 }
 
 export interface IPayload{

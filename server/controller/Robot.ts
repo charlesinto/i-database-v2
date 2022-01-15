@@ -353,7 +353,7 @@ class Robot{
                 const configuration = await Setting.findOne()
 
                 if(configuration){
-                    await Helper.sendAction(configuration.webhook, {action: 'close_at_market_price', message_type: 'bot', bot_id: configuration.bot_id, email_token: configuration.email_token})
+                    await Helper.sendAction(configuration.webhook, {action: 'close_at_market_price', message_type: 'bot', bot_id: configuration.bot_id, email_token: configuration.email_token, delay_seconds: 0, pair: payload.pair})
                 }
 
                 
@@ -399,7 +399,7 @@ class Robot{
                 const configuration = await Setting.findOne()
 
                 if(configuration){
-                    await Helper.sendAction(configuration.webhook, {action: 'close_at_market_price', message_type: 'bot', bot_id: configuration.bot_id, email_token: configuration.email_token})
+                    await Helper.sendAction(configuration.webhook, {action: 'close_at_market_price', message_type: 'bot', bot_id: configuration.bot_id, email_token: configuration.email_token, delay_seconds: 0, pair: payload.pair})
                 }
             }
 
@@ -443,7 +443,7 @@ class Robot{
                 const configuration = await Setting.findOne()
 
                 if(configuration ){
-                    await Helper.sendAction(configuration.webhook, {action: 'close_at_market_price', message_type: 'bot', bot_id: configuration.bot_id, email_token: configuration.email_token})
+                    await Helper.sendAction(configuration.webhook, {action: 'close_at_market_price', message_type: 'bot', bot_id: configuration.bot_id, email_token: configuration.email_token, delay_seconds: 0, pair: payload.pair})
                 }
             }
 
@@ -487,7 +487,7 @@ class Robot{
                 const configuration = await Setting.findOne()
 
                 if(configuration){
-                    await Helper.sendAction(configuration.webhook, {action: 'close_at_market_price', message_type: 'bot', bot_id: configuration.bot_id, email_token: configuration.email_token})
+                    await Helper.sendAction(configuration.webhook, {action: 'close_at_market_price', message_type: 'bot', bot_id: configuration.bot_id, email_token: configuration.email_token, delay_seconds: 0, pair: payload.pair})
                 }
             }
 
@@ -505,7 +505,7 @@ class Robot{
             const configuration = await Setting.findOne()
 
                 if(configuration){
-                    await Helper.sendAction(configuration.webhook, {action: 'close_at_market_price', message_type:'bot', bot_id: configuration.bot_id, email_token: configuration.email_token})
+                    await Helper.sendAction(configuration.webhook, {action: 'close_at_market_price', message_type:'bot', bot_id: configuration.bot_id, email_token: configuration.email_token, delay_seconds: 0, pair: payload.pair})
                 }
                 res.status(200).send({ success: true})
             
