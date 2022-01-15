@@ -341,7 +341,7 @@ class Robot{
                 }, {recieved_messages: newState})
 
                 
-                await Currency.updateOne({pair: payload.pair}, {value: currency.value - payload.rating})
+                await Currency.updateOne({pair: payload.pair}, {value: currency.value + payload.rating})
                 
 
                 await DbLog.create({
@@ -387,7 +387,7 @@ class Robot{
                 }, {recieved_messages: newState})
 
                 
-                await Currency.updateOne({pair: payload.pair}, {value: currency.value - payload.rating})
+                await Currency.updateOne({pair: payload.pair}, {value: currency.value + payload.rating})
                 
 
                 await DbLog.create({
@@ -431,7 +431,7 @@ class Robot{
                 }, {recieved_messages: newState})
 
                 
-                await Currency.updateOne({pair: payload.pair}, {value: currency.value - payload.rating})
+                await Currency.updateOne({pair: payload.pair}, {value: currency.value + payload.rating})
                 
 
                 await DbLog.create({
@@ -475,7 +475,7 @@ class Robot{
                 }, {recieved_messages: newState})
 
                 
-                await Currency.updateOne({pair: payload.pair}, {value: currency.value - payload.rating})
+                await Currency.updateOne({pair: payload.pair}, {value: currency.value + payload.rating})
                 
 
                 await DbLog.create({
