@@ -6,9 +6,10 @@
   "scripts": {
     "server:dev": "nodemon ./server/index.ts",
     "transpile": "tsc --project ./",
-    "start": "npm run transpile && node ./build/server/index.js",
+    "start": "ts-node ./server/index.ts",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  
   "dependencies": {
     "@types/cors": "^2.8.7",
     "@types/dialogflow": "^4.0.4",

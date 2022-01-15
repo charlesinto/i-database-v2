@@ -55,7 +55,7 @@ import express, {
       app.use(bodyParser.json());
       app.use(bodyParser.urlencoded({ extended: false }));
 
-      app.use('/api/v1/bot', botRoute)
+      app.use('/api/v1/bot', botRoute);
   
   
       app.use(function (err: any, req: Request, res: Response, next: any) {
