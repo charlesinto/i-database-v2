@@ -1,0 +1,24 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.Message_Type = exports.EMOT_DOWN = exports.STEP_4_DOWN = exports.STEP_3_DOWN = exports.STEP_2_DOWN = exports.STEP_1_DOWN = exports.STEP_4_UP = exports.STEP_3_UP = exports.STEP_2_UP = exports.STEP_1_UP = void 0;
+exports.STEP_1_UP = 'step1up';
+exports.STEP_2_UP = 'step2up';
+exports.STEP_3_UP = 'step3up';
+exports.STEP_4_UP = 'step4up';
+exports.STEP_1_DOWN = 'step1down';
+exports.STEP_2_DOWN = 'step2down';
+exports.STEP_3_DOWN = 'step3down';
+exports.STEP_4_DOWN = 'step4down';
+exports.EMOT_DOWN = 'emotdown';
+var Message_Type;
+(function (Message_Type) {
+    Message_Type["STEP_1_UP"] = "step1up";
+    Message_Type["STEP_2_UP"] = "step2up";
+    Message_Type["STEP_3_UP"] = "step3up";
+    Message_Type["STEP_4_UP"] = "step4up";
+    Message_Type["STEP_1_DOWN"] = "step1down";
+    Message_Type["STEP_2_DOWN"] = "step2down";
+    Message_Type["STEP_3_DOWN"] = "step3down";
+    Message_Type["STEP_4_DOWN"] = "step4down";
+    Message_Type["EMOT_DOWN"] = "emotdown";
+})(Message_Type = exports.Message_Type || (exports.Message_Type = {}));
