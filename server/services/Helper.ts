@@ -51,7 +51,9 @@ class App {
   static sendAction(url: string, payload: IActionMessageS | IActionMessageB){
     return new Promise(async(resolve, reject) => {
       try{
+        console.log('webhook called ooo: ', url)
         const response = await Axios.post(url,payload)
+        console.log('webhook called ooo')
         resolve(response.data)
       }catch(error){
         reject(error)
