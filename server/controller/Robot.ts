@@ -64,8 +64,8 @@ class Robot{
                     if(((currency.value + payload.rating) >= configuration.action_value)){
                         await Robot.resetStage(payload.pair)
                         if(configuration.auto_action)
-                            await Helper.sendAction(configuration.webhook, { message_type: 
-                            payload.message_type, bot_id: configuration.bot_id,
+                            await Helper.sendAction(configuration.webhook, { message_type: 'bot',
+                             bot_id: configuration.bot_id,
                             email_token: configuration.email_token, delay_seconds: 0, pair: payload.pair})
     
                         
@@ -107,8 +107,7 @@ class Robot{
                         await Robot.resetStage(payload.pair)
 
                         if(configuration.auto_action)
-                            await Helper.sendAction(configuration.webhook, { message_type: 
-                            payload.message_type, bot_id: configuration.bot_id,
+                            await Helper.sendAction(configuration.webhook, { message_type:'bot', bot_id: configuration.bot_id,
                             email_token: configuration.email_token, delay_seconds: 0, pair: payload.pair})
     
                         
@@ -157,8 +156,7 @@ class Robot{
                     if(((currency.value + payload.rating) >= configuration.action_value)){
                         await Robot.resetStage(payload.pair)
                         if(configuration.auto_action)
-                            await Helper.sendAction(configuration.webhook, { message_type: 
-                            payload.message_type, bot_id: configuration.bot_id,
+                            await Helper.sendAction(configuration.webhook, { message_type: 'bot', bot_id: configuration.bot_id,
                             email_token: configuration.email_token, delay_seconds: 0, pair: payload.pair})
     
                         
@@ -200,8 +198,7 @@ class Robot{
                         await Robot.resetStage(payload.pair)
 
                         if(configuration.auto_action)
-                            await Helper.sendAction(configuration.webhook, { message_type: 
-                            payload.message_type, bot_id: configuration.bot_id,
+                            await Helper.sendAction(configuration.webhook, { message_type: 'bot', bot_id: configuration.bot_id,
                             email_token: configuration.email_token, delay_seconds: 0, pair: payload.pair})
     
                         
@@ -255,8 +252,7 @@ class Robot{
                 if(((currency.value + payload.rating) >= configuration.action_value)){
                     await Robot.resetStage(payload.pair)
                     if(configuration.auto_action)
-                        await Helper.sendAction(configuration.webhook, { message_type: 
-                        payload.message_type, bot_id: configuration.bot_id,
+                        await Helper.sendAction(configuration.webhook, { message_type: 'bot', bot_id: configuration.bot_id,
                         email_token: configuration.email_token, delay_seconds: 0, pair: payload.pair})
 
                     
@@ -302,8 +298,7 @@ class Robot{
 
                     await Robot.resetStage(payload.pair)
                     if(configuration.auto_action)
-                        await Helper.sendAction(configuration.webhook, { message_type: 
-                        payload.message_type, bot_id: configuration.bot_id,
+                        await Helper.sendAction(configuration.webhook, { message_type: 'bot', bot_id: configuration.bot_id,
                         email_token: configuration.email_token, delay_seconds: 0, pair: payload.pair})
 
                     
