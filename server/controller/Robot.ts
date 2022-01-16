@@ -330,10 +330,10 @@ class Robot{
                return res.status(200).send({status: true})
             }
             else if(Robot.includes(currentState, Message_Type.STEP_1_UP)){
-                const newState : Message_Type[] = [];
+                const newState : {message_type: Message_Type, value: number}[] = [];
                 
-                currentState.recieved_messages.forEach((item: Message_Type) => {
-                    if(item === Message_Type.STEP_1_UP) return ;
+                currentState.recieved_messages.forEach((item: {message_type: Message_Type, value: number}) => {
+                    if(item.message_type === Message_Type.STEP_1_UP) return ;
                     newState.push(item)
                 })
                 await CurrentState.updateOne({
@@ -376,10 +376,10 @@ class Robot{
                return res.status(200).send({status: true})
             }
             else if(Robot.includes(currentState, Message_Type.STEP_2_UP)){
-                const newState : Message_Type[] = [];
+                const newState : {message_type: Message_Type, value: number}[] = [];
                 
-                currentState.recieved_messages.forEach((item: Message_Type) => {
-                    if(item === Message_Type.STEP_2_UP) return ;
+                currentState.recieved_messages.forEach((item: {message_type: Message_Type, value: number}) => {
+                    if(item.message_type === Message_Type.STEP_2_UP) return ;
                     newState.push(item)
                 })
                 await CurrentState.updateOne({
@@ -420,10 +420,10 @@ class Robot{
                return res.status(200).send({status: true})
             }
             else if(Robot.includes(currentState, Message_Type.STEP_2_UP)){
-                const newState : Message_Type[] = [];
+                const newState : {message_type: Message_Type, value: number}[] = [];
                 
-                currentState.recieved_messages.forEach((item: Message_Type) => {
-                    if(item === Message_Type.STEP_3_UP) return ;
+                currentState.recieved_messages.forEach((item: {message_type: Message_Type, value: number}) => {
+                    if(item.message_type === Message_Type.STEP_3_UP) return ;
                     newState.push(item)
                 })
                 await CurrentState.updateOne({
@@ -464,10 +464,10 @@ class Robot{
                return res.status(200).send({status: true})
             }
             else if(Robot.includes(currentState, Message_Type.STEP_4_UP)){
-                const newState : Message_Type[] = [];
+                const newState : {message_type: Message_Type, value: number}[] = [];
                 
-                currentState.recieved_messages.forEach((item: Message_Type) => {
-                    if(item === Message_Type.STEP_4_UP) return ;
+                currentState.recieved_messages.forEach((item: {message_type: Message_Type, value: number}) => {
+                    if(item.message_type === Message_Type.STEP_1_UP) return ;
                     newState.push(item)
                 })
                 await CurrentState.updateOne({
