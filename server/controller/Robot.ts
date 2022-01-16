@@ -560,6 +560,15 @@ class Robot{
              throw new Error(error)
          }
      }
+     static async getConfiguration(req: Request, res: Response){
+        try{
+           const setting = await Setting.findOne({})
+
+            return res.status(200).send({success: true, data: setting})
+         }catch(error: any){
+             throw new Error(error)
+         }
+     }
 }
 
 

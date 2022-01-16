@@ -16,4 +16,6 @@ router.post('/receive-messae', (req, res) => {
 
 router.post('/update-configuration', handleErrorAsync(Robot.updateConfiguration))
 
+router.get('/get-configuration', handleErrorAsync(Robot.getConfiguration))
+
 export default router;
