@@ -14,4 +14,6 @@ router.post('/receive-messae', (req, res) => {
     res.status(200).send({message: 'Ok'})
 })
 
+router.post('/update-configuration', handleErrorAsync(Robot.updateConfiguration))
+
 export default router;

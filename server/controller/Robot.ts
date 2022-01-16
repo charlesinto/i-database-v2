@@ -550,6 +550,16 @@ class Robot{
             throw error;
         }
      }
+
+      static async updateConfiguration(req: Request, res: Response){
+         try{
+            await Setting.updateOne({}, {...req.body})
+
+            return res.status(200).send({success: true})
+         }catch(error: any){
+             throw new Error(error)
+         }
+     }
 }
 
 
