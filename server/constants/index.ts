@@ -20,5 +20,6 @@ export enum Message_Type{
     STEP_2_DOWN = 'step2down',
     STEP_3_DOWN = 'step3down',
     STEP_4_DOWN = 'step4down',
-    EMOT_DOWN = 'emotdown'
+    EMOT_DOWN = 'emotdown',
+    EMOT_UP = 'emotdown'
 }
