@@ -515,6 +515,8 @@ class Robot{
                     rating: payload.rating
                 })
 
+                return res.status(200).send({success: true,})
+
         }catch(error){
             throw error
         }
