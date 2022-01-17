@@ -516,6 +516,7 @@ class Robot{
     static async handleOnPost(req: Request,res: Response){
         try{
             const payload: IPayload = req.body;
+            console.log('payload gotten: ', payload)
 
             switch(payload.message_type){
                 case Message_Type.STEP_1_UP:
