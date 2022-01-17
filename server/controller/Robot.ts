@@ -465,7 +465,7 @@ class Robot{
                 const newState : {message_type: Message_Type, value: number}[] = [];
                 
                 currentState.recieved_messages.forEach((item: {message_type: Message_Type, value: number}) => {
-                    if(item.message_type === Message_Type.STEP_1_UP) return ;
+                    if(item.message_type === Message_Type.STEP_4_UP) return ;
                     newState.push(item)
                 })
                 await CurrentState.updateOne({
