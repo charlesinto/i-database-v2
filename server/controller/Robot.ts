@@ -20,15 +20,13 @@ class Robot{
                 for(let i = 0; i < currentState.recieved_messages.length; i++){
                     const item: {message_type: Message_Type, value: number} = currentState.recieved_messages[i]
                     if(item.message_type === Message_Type.STEP_1_UP || item.message_type === Message_Type.STEP_4_UP){
-                        newState.push({message_type: item.message_type, value: item.value})
-                    }else{
-             
                         totalAmountToDeduct = totalAmountToDeduct + item.value
+                        newState.push({message_type: item.message_type, value: item.value})
                     }
                 }
             
                 // await CurrentState.updateOne({pair}, {recieved_messages: [...newState]})
-                await Currency.updateOne({pair},{value: currency.value - totalAmountToDeduct})
+                await Currency.updateOne({pair},{value: totalAmountToDeduct})
 
                 resolve(1)
             }catch(error){
@@ -507,7 +505,20 @@ class Robot{
 
                 
             await Currency.updateOne({pair: payload.pair}, {value: parseInt(currency.value) + +payload.rating})
+            
+            const configuration = await Setting.findOne()
+
+                    
+
+            if(((currency.value + payload.rating) >= configuration.action_value)){
+                await Robot.resetStage(payload.pair)
+                if(configuration.auto_action)
+                    await Helper.sendAction(configuration.webhook, { message_type: 'bot',
+                        bot_id: configuration.bot_id,
+                    email_token: configuration.email_token, delay_seconds: 0, pair: payload.pair})
+
                 
+            }
 
                 await DbLog.create({
                     pair: payload.pair,
