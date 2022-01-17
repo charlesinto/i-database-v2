@@ -419,7 +419,7 @@ class Robot{
             if(!currentState){
                return res.status(200).send({status: true})
             }
-            else if(Robot.includes(currentState, Message_Type.STEP_2_UP)){
+            else if(Robot.includes(currentState, Message_Type.STEP_3_UP)){
                 const newState : {message_type: Message_Type, value: number}[] = [];
                 
                 currentState.recieved_messages.forEach((item: {message_type: Message_Type, value: number}) => {
