@@ -17,15 +17,15 @@ class Robot{
                 const currency = await Currency.findOne({pair})
                 const newState : {message_type: Message_Type, value: number} [] = [];
                
-                // for(let i = 0; i < currentState.recieved_messages.length; i++){
-                //     const item: {message_type: Message_Type, value: number} = currentState.recieved_messages[i]
-                //     if(item.message_type === Message_Type.STEP_1_UP || item.message_type === Message_Type.STEP_4_UP){
-                //         newState.push({message_type: item.message_type, value: item.value})
-                //     }else{
+                for(let i = 0; i < currentState.recieved_messages.length; i++){
+                    const item: {message_type: Message_Type, value: number} = currentState.recieved_messages[i]
+                    if(item.message_type === Message_Type.STEP_1_UP || item.message_type === Message_Type.STEP_4_UP){
+                        newState.push({message_type: item.message_type, value: item.value})
+                    }else{
              
-                //         totalAmountToDeduct = totalAmountToDeduct + item.value
-                //     }
-                // }
+                        totalAmountToDeduct = totalAmountToDeduct + item.value
+                    }
+                }
             
                 // await CurrentState.updateOne({pair}, {recieved_messages: [...newState]})
                 await Currency.updateOne({pair},{value: currency.value - totalAmountToDeduct})
