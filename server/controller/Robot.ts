@@ -25,7 +25,7 @@ class Robot{
                     }
                 }
             
-                // await CurrentState.updateOne({pair}, {recieved_messages: [...newState]})
+                await CurrentState.updateOne({pair}, {recieved_messages: [...newState]})
                 await Currency.updateOne({pair},{value: totalAmountToDeduct})
 
                 resolve(1)
