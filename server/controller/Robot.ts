@@ -348,13 +348,14 @@ class Robot{
                     rating: payload.rating
                 })
 
-                const configuration = await Setting.findOne()
-
-                if(configuration){
-                    await Helper.sendAction(configuration.webhook, {action: 'close_at_market_price', message_type: 'bot', bot_id: configuration.bot_id, email_token: configuration.email_token, delay_seconds: 0, pair: payload.pair})
-                }
+                
 
                 
+            }
+            const configuration = await Setting.findOne()
+
+            if(configuration){
+                await Helper.sendAction(configuration.webhook, {action: 'close_at_market_price', message_type: 'bot', bot_id: configuration.bot_id, email_token: configuration.email_token, delay_seconds: 0, pair: payload.pair})
             }
 
 
@@ -394,11 +395,13 @@ class Robot{
                     rating: payload.rating
                 })
 
-                const configuration = await Setting.findOne()
+                
+            }
 
-                if(configuration){
-                    await Helper.sendAction(configuration.webhook, {action: 'close_at_market_price', message_type: 'bot', bot_id: configuration.bot_id, email_token: configuration.email_token, delay_seconds: 0, pair: payload.pair})
-                }
+            const configuration = await Setting.findOne()
+
+            if(configuration){
+                await Helper.sendAction(configuration.webhook, {action: 'close_at_market_price', message_type: 'bot', bot_id: configuration.bot_id, email_token: configuration.email_token, delay_seconds: 0, pair: payload.pair})
             }
 
 
@@ -438,11 +441,13 @@ class Robot{
                     rating: payload.rating
                 })
 
-                const configuration = await Setting.findOne()
+               
+            }
 
-                if(configuration ){
-                    await Helper.sendAction(configuration.webhook, {action: 'close_at_market_price', message_type: 'bot', bot_id: configuration.bot_id, email_token: configuration.email_token, delay_seconds: 0, pair: payload.pair})
-                }
+            const configuration = await Setting.findOne()
+
+            if(configuration ){
+                await Helper.sendAction(configuration.webhook, {action: 'close_at_market_price', message_type: 'bot', bot_id: configuration.bot_id, email_token: configuration.email_token, delay_seconds: 0, pair: payload.pair})
             }
 
 
@@ -482,11 +487,13 @@ class Robot{
                     rating: payload.rating
                 })
 
-                const configuration = await Setting.findOne()
+                
+            }
 
-                if(configuration){
-                    await Helper.sendAction(configuration.webhook, {action: 'close_at_market_price', message_type: 'bot', bot_id: configuration.bot_id, email_token: configuration.email_token, delay_seconds: 0, pair: payload.pair})
-                }
+            const configuration = await Setting.findOne()
+
+            if(configuration){
+                await Helper.sendAction(configuration.webhook, {action: 'close_at_market_price', message_type: 'bot', bot_id: configuration.bot_id, email_token: configuration.email_token, delay_seconds: 0, pair: payload.pair})
             }
 
 
