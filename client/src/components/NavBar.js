@@ -1,6 +1,11 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const NavBar = () => {
+  const navigate = useNavigate();
+  const handleLogout = () => {
+    localStorage.removeItem("i-access-id");
+    navigate("/");
+  };
   return (
     <>
       <header className="header-global">
@@ -52,6 +57,7 @@ const NavBar = () => {
               <a
                 href="#"
                 class="btn btn-outline-white d-inline-flex align-items-center me-md-3"
+                onClick={handleLogout}
               >
                 Logout
               </a>

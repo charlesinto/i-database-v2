@@ -5,7 +5,7 @@ import respond from "../services/Respond";
 export default class Report {
   static async getCoinPairReport(req: Request, res: Response) {
     try {
-      const report = await Currency.find({});
+      const report = await Currency.find({}).sort({ updatedAt: "desc" });
       return respond(res, 201, true, "Operation successful", {
         report,
       });

@@ -1,9 +1,11 @@
 import Footer from "./Footer";
 import NavBar from "./NavBar";
-import SideBar from "./SideBar";
-import { Outlet } from "react-router";
+import { Outlet, useNavigate, Navigate } from "react-router";
 
 const DashboardHOC = () => {
+  const user = localStorage.getItem("i-access-id");
+
+  if (!user) return <Navigate to={"/"} />;
   return (
     <>
       <NavBar />

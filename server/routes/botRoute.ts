@@ -1,21 +1,22 @@
+import Express from "express";
+import Robot from "../controller/Robot";
+import { handleErrorAsync } from "../middleware/ErrorHandler";
 
-import Express from 'express';
-import Robot from '../controller/Robot';
-import { handleErrorAsync } from '../middleware/ErrorHandler';
+const router = Express.Router();
 
-const router = Express.Router()
+router.post("/send-message", handleErrorAsync(Robot.handleOnPost));
 
+router.post("/receive-messae", (req, res) => {
+  console.log("payload gooten: ", req.body);
 
-router.post('/send-message', handleErrorAsync(Robot.handleOnPost))
+  res.status(200).send({ message: "Ok" });
+});
 
-router.post('/receive-messae', (req, res) => {
-    console.log('payload gooten: ', req.body)
+router.patch(
+  "/update-configuration",
+  handleErrorAsync(Robot.updateConfiguration)
+);
 
-    res.status(200).send({message: 'Ok'})
-})
-
-router.post('/update-configuration', handleErrorAsync(Robot.updateConfiguration))
-
-router.get('/get-configuration', handleErrorAsync(Robot.getConfiguration))
+router.get("/get-configuration", handleErrorAsync(Robot.getConfiguration));
 
 export default router;

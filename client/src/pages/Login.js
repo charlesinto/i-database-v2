@@ -1,4 +1,30 @@
+import { useState } from "react";
+import { Navigate, useNavigate } from "react-router";
+import { login } from "../api/auth.api";
+
 const Login = () => {
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+
+  const navigate = useNavigate();
+
+  const handleLogin = async (e) => {
+    try {
+      e.preventDefault();
+      const response = await login({ email, password });
+      localStorage.setItem("i-access-id", response.data.data.token);
+
+      navigate("/dashboard");
+    } catch (error) {
+      console.log("error: ", error);
+    }
+  };
+
+  const user = localStorage.getItem("i-access-id");
+
+  if (user) {
+    return <Navigate to={"/dashboard"} />;
+  }
   return (
     <section className="vh-lg-100 mt-5 mt-lg-0 bg-soft d-flex align-items-center">
       <div className="container">
@@ -53,6 +79,8 @@ const Login = () => {
                       id="email"
                       autofocus
                       required
+                      value={email}
+                      onChange={(e) => setEmail(e.target.value)}
                     />
                   </div>
                 </div>
@@ -81,6 +109,8 @@ const Login = () => {
                         className="form-control"
                         id="password"
                         required
+                        value={password}
+                        onChange={(e) => setPassword(e.target.value)}
                       />
                     </div>
                   </div>
@@ -108,7 +138,11 @@ const Login = () => {
                   </div>
                 </div>
                 <div className="d-grid">
-                  <button type="submit" className="btn btn-gray-800">
+                  <button
+                    onClick={handleLogin}
+                    type="submit"
+                    className="btn btn-gray-800"
+                  >
                     Sign in
                   </button>
                 </div>
