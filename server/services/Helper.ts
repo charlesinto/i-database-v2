@@ -1,6 +1,7 @@
 import Axios from "axios";
 import jwt from "jsonwebtoken";
 import { IActionMessageB, IActionMessageS } from "../interfaces";
+import Mailer from "./Mailer";
 
 class App {
   static assignToken(payload: any, expiresTime: any) {
@@ -48,18 +49,38 @@ class App {
     }
   }
 
-  static sendAction(url: string, payload: IActionMessageS | IActionMessageB){
-    return new Promise(async(resolve, reject) => {
-      try{
-        console.log('webhook called ooo: ', url)
-        console.log('PAYLOAD: ', payload)
-        const response = await Axios.post(url,payload)
-        console.log('webhook called ooo')
-        resolve(response.data)
-      }catch(error){
-        reject(error)
+  static sendAction(url: string, payload: IActionMessageS | IActionMessageB) {
+    return new Promise(async (resolve, reject) => {
+      try {
+        const response = await Axios.post(url, payload);
+        console.log("webhook called ooo");
+        const mailTo = payload.mailRecipients?.split(",") as string[];
+
+        Mailer.sendMail({
+          to: mailTo,
+          subject: "i-Asset Bot",
+          html: `
+          
+            <p>
+              <h4>
+                <b>Pair: </b> ${payload.pair}
+              </h4>
+              <br />
+              <h4>
+                <b>Type: </b> ${payload.type}
+              </h4>
+               <br />
+              <h4>
+                <b>Time: </b> ${new Date().toLocaleDateString()}
+              </h4>
+            </p>
+          `,
+        });
+        resolve(response.data);
+      } catch (error) {
+        reject(error);
       }
-    })
+    });
   }
 }
 

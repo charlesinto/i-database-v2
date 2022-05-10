@@ -80,6 +80,8 @@ class Robot {
                 email_token: configuration.email_token,
                 delay_seconds: 0,
                 pair: payload.pair,
+                type: "ActionMessageB",
+                mailRecipients: configuration.emailRecipients,
               });
           }
         }
@@ -128,6 +130,8 @@ class Robot {
                 email_token: configuration.email_token,
                 delay_seconds: 0,
                 pair: payload.pair,
+                type: "ActionMessageB",
+                mailRecipients: configuration.emailRecipients,
               });
           }
         }
@@ -181,6 +185,8 @@ class Robot {
                 email_token: configuration.email_token,
                 delay_seconds: 0,
                 pair: payload.pair,
+                type: "ActionMessageB",
+                mailRecipients: configuration.emailRecipients,
               });
           }
         }
@@ -229,6 +235,8 @@ class Robot {
                 email_token: configuration.email_token,
                 delay_seconds: 0,
                 pair: payload.pair,
+                type: "ActionMessageB",
+                mailRecipients: configuration.emailRecipients,
               });
           }
         }
@@ -295,6 +303,8 @@ class Robot {
               email_token: configuration.email_token,
               delay_seconds: 0,
               pair: payload.pair,
+              type: "ActionMessageB",
+              mailRecipients: configuration.emailRecipients,
             });
         }
 
@@ -350,6 +360,8 @@ class Robot {
               email_token: configuration.email_token,
               delay_seconds: 0,
               pair: payload.pair,
+              type: "ActionMessageB",
+              mailRecipients: configuration.emailRecipients,
             });
         }
 
@@ -417,6 +429,8 @@ class Robot {
           email_token: configuration.email_token,
           delay_seconds: 0,
           pair: payload.pair,
+          type: "ActionMessageS",
+          mailRecipients: configuration.emailRecipients,
         });
       }
 
@@ -471,6 +485,8 @@ class Robot {
           email_token: configuration.email_token,
           delay_seconds: 0,
           pair: payload.pair,
+          type: "ActionMessageS",
+          mailRecipients: configuration.emailRecipients,
         });
       }
 
@@ -525,6 +541,8 @@ class Robot {
           email_token: configuration.email_token,
           delay_seconds: 0,
           pair: payload.pair,
+          type: "ActionMessageS",
+          mailRecipients: configuration.emailRecipients,
         });
       }
 
@@ -579,6 +597,8 @@ class Robot {
           email_token: configuration.email_token,
           delay_seconds: 0,
           pair: payload.pair,
+          type: "ActionMessageS",
+          mailRecipients: configuration.emailRecipients,
         });
       }
 
@@ -609,6 +629,8 @@ class Robot {
             email_token: configuration.email_token,
             delay_seconds: 0,
             pair: payload.pair,
+            type: "ActionMessageS",
+            mailRecipients: configuration.emailRecipients,
           });
       }
 
