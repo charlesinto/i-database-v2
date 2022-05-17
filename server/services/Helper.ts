@@ -75,8 +75,17 @@ class App {
               </h4>
             </p>
           `,
-        });
-        resolve(response.data);
+        })
+          .then(() => {
+            resolve(response.data);
+          })
+          .catch((error) => {
+            console.log("Mail Sending error: ", error);
+            reject(error);
+          })
+          .finally(() => {
+            // resolve(response.data);
+          });
       } catch (error) {
         reject(error);
       }
