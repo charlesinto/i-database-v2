@@ -56,6 +56,8 @@ class App {
         console.log("webhook called ooo");
         const mailTo = payload.mailRecipients?.split(",") as string[];
 
+        console.log("mailTo: ", mailTo);
+
         Mailer.sendMail({
           to: mailTo,
           subject: "i-Asset Bot",
@@ -76,7 +78,8 @@ class App {
             </p>
           `,
         })
-          .then(() => {
+          .then((data) => {
+            console.log("Mail Sent ", data);
             resolve(response.data);
           })
           .catch((error) => {
