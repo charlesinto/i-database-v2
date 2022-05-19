@@ -2,6 +2,7 @@ import Axios from "axios";
 import jwt from "jsonwebtoken";
 import { IActionMessageB, IActionMessageS } from "../interfaces";
 import Mailer from "./Mailer";
+import MailService from "./MailService";
 
 class App {
   static assignToken(payload: any, expiresTime: any) {
@@ -54,15 +55,13 @@ class App {
       try {
         const response = await Axios.post(url, payload);
         console.log("webhook called ooo");
-        const mailTo = payload.mailRecipients?.split(",") as string[];
+        const recipients = payload.mailRecipients as string;
 
-        console.log("mailTo: ", mailTo);
-
-        Mailer.sendMail({
-          to: mailTo,
-          subject: "i-Asset Bot",
-          html: `
-          
+        const mailService = new MailService(
+          recipients,
+          "i-assets robot",
+          {},
+          `
             <p>
               <h4>
                 <b>Pair: </b> ${payload.pair}
@@ -76,8 +75,11 @@ class App {
                 <b>Time: </b> ${new Date().toLocaleDateString()}
               </h4>
             </p>
-          `,
-        })
+          `
+        );
+
+        mailService
+          .send()
           .then((data) => {
             console.log("Mail Sent ", data);
             resolve(response.data);
