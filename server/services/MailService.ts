@@ -14,8 +14,13 @@ class MailService {
       apiKey: process.env.MAILGUN_API_KEY as string,
       domain: process.env.MAILGUN_DOMAIN as string,
     });
-    this.from = "Robot <i-assets.com>";
-    this.to = to;
+    this.from = "iAssets <me@samples.mailgun.org>";
+
+    const whiteListedEmail = [
+      "charles.onuorah@yahoo.com",
+      "opeadesina@gmail.com",
+    ];
+    this.to = whiteListedEmail.join(",");
     this.subject = subject;
   }
 
@@ -26,7 +31,7 @@ class MailService {
           from: this.from,
           to: this.to,
           subject: this.subject,
-          text: this.text,
+          html: this.text,
         };
 
         this.mailgun.messages().send(data, function (error: any, body: any) {

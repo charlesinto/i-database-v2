@@ -66,13 +66,11 @@ class App {
               <h4>
                 <b>Pair: </b> ${payload.pair}
               </h4>
-              <br />
               <h4>
                 <b>Type: </b> ${payload.type}
               </h4>
-               <br />
               <h4>
-                <b>Time: </b> ${new Date().toLocaleDateString()}
+                <b>Time: </b> ${new Date().toLocaleString()}
               </h4>
             </p>
           `

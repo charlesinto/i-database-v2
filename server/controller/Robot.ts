@@ -49,6 +49,7 @@ class Robot {
       const payload: IPayload = req.body;
 
       const currentState = await CurrentState.findOne({ pair: payload.pair });
+      console.log("current state: ", currentState);
       const currency = await Currency.findOne({ pair: payload.pair });
       if (!currentState) {
         await CurrentState.create({

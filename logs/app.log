@@ -275,3 +275,12 @@
 {"level":"info","message":"::1 - - [06/May/2022:00:27:25 +0000] \"GET /api/v1/bot/get-configuration HTTP/1.1\" 304 - \"http://localhost:3000/\" \"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/100.0.4896.127 Safari/537.36\"\n"}
 {"level":"info","message":"::1 - - [06/May/2022:00:27:29 +0000] \"GET /api/v1/auth/get-coin-report HTTP/1.1\" 201 2322 \"http://localhost:3000/\" \"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/100.0.4896.127 Safari/537.36\"\n"}
 {"level":"info","message":"::1 - - [06/May/2022:00:27:30 +0000] \"GET /api/v1/auth/get-coin-report HTTP/1.1\" 201 2322 \"http://localhost:3000/\" \"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/100.0.4896.127 Safari/537.36\"\n"}
+{"level":"info","message":"::1 - - [25/May/2022:08:57:41 +0000] \"POST /api/v1/bot/send-message HTTP/1.1\" 200 16 \"-\" \"PostmanRuntime/7.29.0\"\n"}
+{"level":"info","message":"::1 - - [25/May/2022:09:00:03 +0000] \"POST /api/v1/bot/send-message HTTP/1.1\" 200 16 \"-\" \"PostmanRuntime/7.29.0\"\n"}
+{"level":"info","message":"::1 - - [25/May/2022:09:25:59 +0000] \"POST /api/v1/bot/send-message HTTP/1.1\" 200 16 \"-\" \"PostmanRuntime/7.29.0\"\n"}
+{"level":"info","message":"::1 - - [25/May/2022:09:28:55 +0000] \"POST /api/v1/bot/send-message HTTP/1.1\" 200 16 \"-\" \"PostmanRuntime/7.29.0\"\n"}
+{"level":"info","message":"::1 - - [25/May/2022:09:30:48 +0000] \"POST /api/v1/bot/send-message HTTP/1.1\" 200 16 \"-\" \"PostmanRuntime/7.29.0\"\n"}
+{"level":"info","message":"::1 - - [25/May/2022:09:33:45 +0000] \"POST /api/v1/bot/send-message HTTP/1.1\" 200 16 \"-\" \"PostmanRuntime/7.29.0\"\n"}
+{"level":"info","message":"::1 - - [25/May/2022:09:33:55 +0000] \"POST /api/v1/bot/send-message HTTP/1.1\" 200 16 \"-\" \"PostmanRuntime/7.29.0\"\n"}
+{"level":"info","message":"::1 - - [25/May/2022:09:36:47 +0000] \"POST /api/v1/bot/send-message HTTP/1.1\" 200 16 \"-\" \"PostmanRuntime/7.29.0\"\n"}
+{"level":"info","message":"::1 - - [25/May/2022:09:36:57 +0000] \"POST /api/v1/bot/send-message HTTP/1.1\" 200 16 \"-\" \"PostmanRuntime/7.29.0\"\n"}
