@@ -19,6 +19,7 @@ class MailService {
     const whiteListedEmail = [
       "charles.onuorah@yahoo.com",
       "opeadesina@gmail.com",
+      "opeadesina@emmsofts.com",
     ];
     this.to = whiteListedEmail.join(",");
     this.subject = subject;
