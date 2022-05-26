@@ -57,6 +57,7 @@ const Report = () => {
                   <th className="border-0 rounded-start">#</th>
                   <th className="border-0">Coin Pair</th>
                   <th className="border-0">Value</th>
+                  <th className="border-0">Message Type</th>
                   <th className="border-0">Last Updated</th>
                 </tr>
               </thead>
@@ -84,6 +85,7 @@ const Report = () => {
                       {item.pair}
                     </td>
                     <td>{item.value}</td>
+                    <td>{item.type}</td>
                     <td>
                       {moment(item.updatedAt).format("MMMM Do YYYY, h:mm:ss a")}
                     </td>
