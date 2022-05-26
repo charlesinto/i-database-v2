@@ -15,6 +15,7 @@ class Robot {
         const currentState = await CurrentState.findOne({ pair });
         const currency = await Currency.findOne({ pair });
         const newState: { message_type: Message_Type; value: number }[] = [];
+        let type!: Message_Type;
 
         for (let i = 0; i < currentState.recieved_messages.length; i++) {
           const item: { message_type: Message_Type; value: number } =
@@ -24,6 +25,7 @@ class Robot {
             item.message_type === Message_Type.STEP_4_UP
           ) {
             totalAmountToDeduct = totalAmountToDeduct + item.value;
+            type = item.message_type;
             newState.push({
               message_type: item.message_type,
               value: item.value,
@@ -35,7 +37,10 @@ class Robot {
           { pair },
           { recieved_messages: [...newState] }
         );
-        await Currency.updateOne({ pair }, { value: totalAmountToDeduct });
+        await Currency.updateOne(
+          { pair },
+          { value: totalAmountToDeduct, type }
+        );
 
         resolve(1);
       } catch (error) {
@@ -67,7 +72,10 @@ class Robot {
         } else {
           await Currency.updateOne(
             { pair: payload.pair },
-            { value: currency.value + payload.rating }
+            {
+              value: currency.value + payload.rating,
+              type: payload.message_type,
+            }
           );
 
           const configuration = await Setting.findOne();
@@ -116,7 +124,10 @@ class Robot {
         } else {
           await Currency.updateOne(
             { pair: payload.pair },
-            { value: currency.value + payload.rating }
+            {
+              value: currency.value + payload.rating,
+              type: payload.message_type,
+            }
           );
 
           const configuration = await Setting.findOne();
@@ -172,7 +183,10 @@ class Robot {
         } else {
           await Currency.updateOne(
             { pair: payload.pair },
-            { value: currency.value + payload.rating }
+            {
+              value: currency.value + payload.rating,
+              type: payload.message_type,
+            }
           );
 
           const configuration = await Setting.findOne();
@@ -221,7 +235,10 @@ class Robot {
         } else {
           await Currency.updateOne(
             { pair: payload.pair },
-            { value: currency.value + payload.rating }
+            {
+              value: currency.value + payload.rating,
+              type: payload.message_type,
+            }
           );
 
           const configuration = await Setting.findOne();
@@ -290,7 +307,7 @@ class Robot {
 
         await Currency.updateOne(
           { pair: payload.pair },
-          { value: currency.value + payload.rating }
+          { value: currency.value + payload.rating, type: payload.message_type }
         );
 
         const configuration = await Setting.findOne();
@@ -347,7 +364,7 @@ class Robot {
 
         await Currency.updateOne(
           { pair: payload.pair },
-          { value: currency.value + payload.rating }
+          { value: currency.value + payload.rating, type: payload.message_type }
         );
 
         const configuration = await Setting.findOne();
@@ -411,7 +428,10 @@ class Robot {
         );
         await Currency.updateOne(
           { pair: payload.pair },
-          { value: parseInt(currency.value) + +payload.rating }
+          {
+            value: parseInt(currency.value) + +payload.rating,
+            type: payload.message_type,
+          }
         );
 
         await DbLog.create({
@@ -466,7 +486,10 @@ class Robot {
 
         await Currency.updateOne(
           { pair: payload.pair },
-          { value: parseInt(currency.value) + +payload.rating }
+          {
+            value: parseInt(currency.value) + +payload.rating,
+            type: payload.message_type,
+          }
         );
 
         await DbLog.create({
@@ -522,7 +545,10 @@ class Robot {
 
         await Currency.updateOne(
           { pair: payload.pair },
-          { value: parseInt(currency.value) + +payload.rating }
+          {
+            value: parseInt(currency.value) + +payload.rating,
+            type: payload.message_type,
+          }
         );
 
         await DbLog.create({
@@ -578,7 +604,10 @@ class Robot {
 
         await Currency.updateOne(
           { pair: payload.pair },
-          { value: parseInt(currency.value) + +payload.rating }
+          {
+            value: parseInt(currency.value) + +payload.rating,
+            type: payload.message_type,
+          }
         );
 
         await DbLog.create({
@@ -616,7 +645,10 @@ class Robot {
 
       await Currency.updateOne(
         { pair: payload.pair },
-        { value: parseInt(currency.value) + +payload.rating }
+        {
+          value: parseInt(currency.value) + +payload.rating,
+          type: payload.message_type,
+        }
       );
 
       const configuration = await Setting.findOne();

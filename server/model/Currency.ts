@@ -11,6 +11,9 @@ const currencySchema = new mongoose.Schema(
     value: {
       type: Schema.Types.Number,
     },
+    type: {
+      type: String,
+    },
   },
   { timestamps: true }
 );
