@@ -287,12 +287,17 @@ class Robot {
 
       const currentState = await CurrentState.findOne({ pair: payload.pair });
       const currency = await Currency.findOne({ pair: payload.pair });
+      await Currency.updateOne(
+        { pair: payload.pair },
+        { type: payload.message_type }
+      );
       if (!currentState) {
         return res.status(200).send({ status: true });
       } else if (
         Robot.includes(currentState, Message_Type.STEP_1_UP) &&
         !Robot.includes(currentState, Message_Type.STEP_2_UP)
       ) {
+        console.log("called ooo: ", payload);
         await CurrentState.updateOne(
           {
             pair: payload.pair,
@@ -344,6 +349,10 @@ class Robot {
 
       const currentState = await CurrentState.findOne({ pair: payload.pair });
       const currency = await Currency.findOne({ pair: payload.pair });
+      await Currency.updateOne(
+        { pair: payload.pair },
+        { type: payload.message_type }
+      );
       if (!currentState) {
         return res.status(200).send({ status: true });
       } else if (
