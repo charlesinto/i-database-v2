@@ -37,10 +37,7 @@ class Robot {
           { pair },
           { recieved_messages: [...newState] }
         );
-        await Currency.updateOne(
-          { pair },
-          { value: totalAmountToDeduct, type }
-        );
+        await Currency.updateOne({ pair }, { value: totalAmountToDeduct });
 
         resolve(1);
       } catch (error) {
@@ -68,6 +65,7 @@ class Robot {
           await Currency.create({
             pair: payload.pair,
             value: payload.rating,
+            type: payload.message_type,
           });
         } else {
           await Currency.updateOne(
@@ -288,6 +286,7 @@ class Robot {
       const currentState = await CurrentState.findOne({ pair: payload.pair });
       const currency = await Currency.findOne({ pair: payload.pair });
       console.log("payload: ", payload);
+      console.log("message type: ", payload.message_type);
       await Currency.updateOne(
         { pair: payload.pair },
         { type: payload.message_type }
