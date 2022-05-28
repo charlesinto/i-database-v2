@@ -287,6 +287,7 @@ class Robot {
 
       const currentState = await CurrentState.findOne({ pair: payload.pair });
       const currency = await Currency.findOne({ pair: payload.pair });
+      console.log("payload: ", payload);
       await Currency.updateOne(
         { pair: payload.pair },
         { type: payload.message_type }
