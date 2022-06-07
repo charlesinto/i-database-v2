@@ -14,14 +14,14 @@ class MailService {
       apiKey: process.env.MAILGUN_API_KEY as string,
       domain: process.env.MAILGUN_DOMAIN as string,
     });
-    this.from = "iAssets <me@samples.mailgun.org>";
+    this.from = "iAssets <robot@mail1.emmsofts.com>";
 
     const whiteListedEmail = [
       "charles.onuorah@yahoo.com",
       "opeadesina@gmail.com",
       "opeadesina@emmsofts.com",
     ];
-    this.to = whiteListedEmail.join(",");
+    this.to = to;
     this.subject = subject;
   }
 
